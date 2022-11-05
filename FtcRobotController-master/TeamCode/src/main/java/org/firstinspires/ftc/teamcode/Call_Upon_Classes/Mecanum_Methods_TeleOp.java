@@ -54,7 +54,7 @@ public class Mecanum_Methods_TeleOp {
         br.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
 
-
+//old
     public void run_drive_motors(Gamepad gamepad1, Telemetry telemetry){
         ly=-1 * gamepad1.left_stick_y;
         lx=gamepad1.left_stick_x;
@@ -70,50 +70,6 @@ public class Mecanum_Methods_TeleOp {
 
     }
 
-    public void run_drive_motors_14(Gamepad gamepad1, Telemetry telemetry){
-        ly=-1 * gamepad1.left_stick_y;
-        rx=gamepad1.right_stick_x;
-        rt = gamepad1.right_trigger;
-        lt = gamepad1.left_trigger;
-
-        if (ly != 0){
-            ly = -ly;
-            fl.setPower(ly);
-            bl.setPower(ly);
-            fr.setPower(ly);
-            br.setPower(ly);
-        } else if (rx > 0){
-            fl.setPower(rx);
-            bl.setPower(-rx);
-            fr.setPower(-rx);
-            br.setPower(rx);
-        } else if (rx<0) {
-            fl.setPower(rx);
-            bl.setPower(-rx);
-            fr.setPower(-rx);
-            br.setPower(rx);
-        } else {
-            fl.setPower(0);
-            fr.setPower(0);
-            br.setPower(0);
-            bl.setPower(0);
-        }
-
-        if (lt > 0) {
-            fl.setPower(-lt);
-            fr.setPower(lt);
-            bl.setPower(-lt);
-            br.setPower(lt);
-        } else if (rt > 0) {
-            fl.setPower(rt);
-            fr.setPower(-rt);
-            bl.setPower(rt);
-            br.setPower(-rt);
-        }
-        getTelemetry(telemetry);
-
-
-    }
     public void run_drive_motors_15(Gamepad gamepad1, Telemetry telemetry){
         ly=gamepad1.left_stick_y;
         lx=gamepad1.left_stick_x;

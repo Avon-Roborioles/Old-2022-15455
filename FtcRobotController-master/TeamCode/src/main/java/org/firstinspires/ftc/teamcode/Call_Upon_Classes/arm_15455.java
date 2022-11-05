@@ -17,6 +17,7 @@ public class arm_15455 {
         boolean right = gp.dpad_right;
         boolean middle = gp.dpad_up;
 
+
         if (left) {
             arm.setPosition(0.56); //need to check
         } else if (right) {

@@ -4,8 +4,6 @@ This readme.md file contains information for the following things:
 - understand gamepad controls for TeleOp 
 - Understand Autonomous procedures
 
-For any questions regarding this file, please ask Stephen Onochie.
-
 
 ## Compenent Names & Ports
 ### Motors
@@ -16,17 +14,7 @@ For any questions regarding this file, please ask Stephen Onochie.
 -
 
 ## TeleOp (Gamepad Driving)
-### 14954
-- 
-### 15455
-- 
-### 21954
-- 
+
 
 ## Autonomous
-### 14954
-- 
-### 15455
-- 
-### 21954
-- 
+
