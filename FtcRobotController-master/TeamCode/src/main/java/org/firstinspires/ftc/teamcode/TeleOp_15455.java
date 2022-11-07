@@ -15,17 +15,17 @@ public class TeleOp_15455 extends LinearOpMode {
         //Initialize objects
         drivingMotors.init_drive_motors(hardwareMap);
         lift.init_lift(hardwareMap, "lift");
-//        intake.init_intake(hardwareMap, "intake");
+        intake.init_intake(hardwareMap, "intake");
         arm.init_arm(hardwareMap, "arm");
 
         waitForStart();
-
+        lift.lift_fix();
         while (opModeIsActive()) {
                 //Driver 1 Functions
             drivingMotors.run_drive_motors_15(gamepad1, telemetry); //driving
                 //Driver 2 Functions
             lift.runlift(gamepad2, telemetry);
-//            intake.run_intake(gamepad2, telemetry);
+            intake.run_intake(gamepad2, telemetry);
             arm.run_arm(gamepad2, telemetry);
 
 

@@ -21,14 +21,23 @@ public class Intake_15455 {
 
 
     public void run_intake(Gamepad gp, Telemetry telemetry) {
-        boolean open = gp.x;
-        boolean close = gp.b;
-
+        boolean open = gp.left_bumper;
+        boolean close = gp.right_bumper;
+//ellery
         if (open) {
-            intake.setPosition(.24); //need to check
+            intake.setPosition(.20); //need to check
         } else if (close) {
-            intake.setPosition(0.35); //need to check
+            intake.setPosition(0.33); //need to check
         }
+        get_telemetry(telemetry);
+
+
+//
+//        if (open) {
+//            intake.setPosition(.6); //need to check
+//        } else if (close) {
+//            intake.setPosition(0.35); //need to check
+//        }
         get_telemetry(telemetry);
 
 
