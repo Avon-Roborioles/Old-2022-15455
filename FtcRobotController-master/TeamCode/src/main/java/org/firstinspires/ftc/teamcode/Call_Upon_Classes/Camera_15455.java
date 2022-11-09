@@ -48,7 +48,7 @@ public class Camera_15455 extends LinearOpMode
 
 
         waitForStart();
-        String string="";
+        String string=" ";
         while (opModeIsActive())
         {
             if (pipeline.getSide() == PipeLine.SIDE.BLUE){
@@ -58,7 +58,11 @@ public class Camera_15455 extends LinearOpMode
             }else{
                 string = "purple";
             }
-            telemetry.addData("",string);
+            telemetry.addLine(string);
+            telemetry.addData("h",pipeline.getAverageH());
+            telemetry.addData("s",pipeline.getAverageS());
+            telemetry.addData("v",pipeline.getAverageV());
+            telemetry.addData("thing", webcam.getFps());
             telemetry.update();
             sleep(100);
         }
@@ -93,9 +97,9 @@ public class Camera_15455 extends LinearOpMode
         @Override
         public void init(Mat input) {
             Imgproc.cvtColor(input, mat, Imgproc.COLOR_RGB2HSV_FULL);
-            inputToHSV(Hue, 1);
-            inputToHSV(Sat, 2);
-            inputToHSV(Val, 3);
+            inputToHSV(Hue, 0);
+            inputToHSV(Sat, 1);
+            inputToHSV(Val, 2);
 
             H_region = Hue.submat(new Rect(TopLeft, BottomRight));
             S_region = Sat.submat(new Rect(TopLeft, BottomRight));
@@ -148,6 +152,15 @@ public class Camera_15455 extends LinearOpMode
         public SIDE getSide() {return side;}
         public enum SIDE {
             YELLOW,PURPLE,BLUE
+        }
+        public int getAverageH() {
+            return averageH;
+        }
+        public int getAverageS() {
+            return averageS;
+        }
+        public int getAverageV() {
+            return averageV;
         }
     }
 
