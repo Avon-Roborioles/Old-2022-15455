@@ -29,14 +29,13 @@ public class Intake_15455 {
         } else if (close) {
             intake.setPosition(0.33); //need to check
         }
-        get_telemetry(telemetry);
 
 
-//
+
 //        if (open) {
 //            intake.setPosition(.6); //need to check
 //        } else if (close) {
-//            intake.setPosition(0.35); //need to check
+//            intake.setPosition(0.30); //need to check
 //        }
         get_telemetry(telemetry);
 
