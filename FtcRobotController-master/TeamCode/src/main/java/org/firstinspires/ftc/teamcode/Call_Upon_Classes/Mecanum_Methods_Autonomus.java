@@ -161,4 +161,51 @@ public class  Mecanum_Methods_Autonomus {
         telemetry.addData("bl encoder value: ",bl.getCurrentPosition());
         telemetry.addData("br encoder value: ",br.getCurrentPosition());
     }
+
+    /*
+    //takes integer that multiplies the equivelant 90 degree turns
+    public void turn(int turnTimes) {
+        if (turnAmount > 0) {
+            desiredValue = turnTimes*turnIncrament;
+            //add rightward turning motion that gives the motors power until the dead wheel reads the value of desiredValue
+
+        }
+        else if (turnAmount < 0) {
+            desiredValue = java.lang.Math.abs(turnTimes)*turnIncrament;
+            //add leftward turning motion that gives the motors power until the dead wheel reads the value of desiredValue
+
+        }
+    }
+
+      //move method takes axis the bot is meant to move on and the amount of tiles it is meant to move (and simplify calling)
+  public void move(String axis, double tiles) {
+    //determine what axis wants to be moved on
+    if (axis == "x") {
+      //determines which direction the robot need to travel (since negative traveled time doesn't mean negative direction)
+      if (tiles > 0) {
+        desiredValue = tiles*tileDistance;
+        //add motion that moves the motors forward until the dead wheel reaches the value of desiredValue
+
+      }
+      else if (tiles < 0) {
+        desiredValue = java.lang.Math.abs(tiles)*tileDistance;
+        //add motion that moves the motors backward until the dead wheel reaches the value of desiredValue
+
+      }
+    }
+    else if (axis == "y") {
+      //determines which direction the robot need to travel (since negative traveled time doesn't mean negative direction)
+      if (tiles > 0) {
+        desiredValue = tiles*tileDistance;
+        //add motion that moves the motors right until the dead wheel reaches the value of desiredValue
+
+      }
+      else if (tiles < 0) {
+        desiredValue = java.lang.Math.abs(tiles)*tileDistance;
+        //add motion that moves the motors left until the dead wheel reaches the value of desiredValue
+
+      }
+    }
+  }
+    */
 }
