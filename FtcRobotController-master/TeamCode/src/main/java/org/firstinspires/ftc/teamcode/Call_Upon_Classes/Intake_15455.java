@@ -46,5 +46,17 @@ public class Intake_15455 {
     public void get_telemetry (Telemetry telemetry) {
         telemetry.addData("Position",intake.getPosition());
     }
+/*
+    //opens the gripper
+    public void openGripper() {
+        //add servo value for closed gripper below
 
+    }
+
+    //closes the gripper (ideally on a cone)
+    public void closeGripper() {
+        //add servo value for closed gripper below
+
+    }
+*/
 }

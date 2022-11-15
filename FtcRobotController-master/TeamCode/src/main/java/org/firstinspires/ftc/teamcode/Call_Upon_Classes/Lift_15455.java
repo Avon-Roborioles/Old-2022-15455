@@ -125,5 +125,26 @@ public class Lift_15455 {
         telemetry.addData("down", down);
     }
 
+/*
+    //takes the height incrament we would like to score on, 0 being at rest, 1 being low junction, 2 being medium junction, and 3 being high
+    public void moveElevator(int incrament) {
+        //add encoder values for the motor to hold at
+        if (incrament == 0) {
+            //add ground level below
 
+        }
+        else if (incrament == 1) {
+            //add low level below
+
+        }
+        else if (incrament == 2) {
+            //add medium level below
+
+        }
+        else if (incrament == 3) {
+            //add high level below
+
+        }
+    }
+    */
 }
