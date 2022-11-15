@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.Call_Upon_Classes;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.*;
+import
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
@@ -91,9 +92,9 @@ public class  Mecanum_Methods_Autonomus {
     }
 
 
-    public void goToSpot(int inches, double power){
+    public void goToSpot(double inches, double power){
         inches*=91;
-        setRelativeTargetAll(inches);
+        setRelativeTargetAll((int) inches);
         setPowerAll(power);
 //        while (isBusy()){}
     }
@@ -163,47 +164,52 @@ public class  Mecanum_Methods_Autonomus {
     }
 
     /*
-    //takes integer that multiplies the equivelant 90 degree turns
+    //double that holds the value of inches that want to be traveled
+    double desiredValue = 24;
+
+    //takes integer turnTimes and executes a loop depending on its positive or negative disposition to turn left or right certain amount of times
+    //as would be specified by the absolute value of the passed integer
     public void turn(int turnTimes) {
         if (turnAmount > 0) {
-            desiredValue = turnTimes*turnIncrament;
-            //add rightward turning motion that gives the motors power until the dead wheel reads the value of desiredValue
-
+            for (int i = 0; turnAmount > i; i++) {
+                turn90Right(0.5);
+            }
         }
         else if (turnAmount < 0) {
-            desiredValue = java.lang.Math.abs(turnTimes)*turnIncrament;
-            //add leftward turning motion that gives the motors power until the dead wheel reads the value of desiredValue
+            for (int i = 0; turnAmount < i; i--) {
+                turn90Left(0.5);
+            }
 
         }
     }
 
-      //move method takes axis the bot is meant to move on and the amount of tiles it is meant to move (and simplify calling)
+  //move method takes axis the bot is meant to move on and the amount of tiles it is meant to move (and simplify calling)
   public void move(String axis, double tiles) {
     //determine what axis wants to be moved on
     if (axis == "x") {
-      //determines which direction the robot need to travel (since negative traveled time doesn't mean negative direction)
+      //determines if the robot needs to strafe left or right
       if (tiles > 0) {
-        desiredValue = tiles*tileDistance;
-        //add motion that moves the motors forward until the dead wheel reaches the value of desiredValue
-
+        desiredValue *= tiles;
+        //has the robot move right until it reaches the value of desiredValue which is equal to tiles*24
+        strafeRight(0.5, desiredValue);
       }
       else if (tiles < 0) {
-        desiredValue = java.lang.Math.abs(tiles)*tileDistance;
-        //add motion that moves the motors backward until the dead wheel reaches the value of desiredValue
-
+        desiredValue *= java.lang.Math.abs(tiles);
+        //has the robot move left until it reaches the value of the desiredValue which is equal to tiles*24
+        strafeLeft(0.5, desiredValue);
       }
     }
     else if (axis == "y") {
-      //determines which direction the robot need to travel (since negative traveled time doesn't mean negative direction)
+      //determines if robot needs to move forward/backward
       if (tiles > 0) {
-        desiredValue = tiles*tileDistance;
-        //add motion that moves the motors right until the dead wheel reaches the value of desiredValue
-
+        desiredValue *= tiles;
+        //has the robot move forward until it reaches the value of desiredValue which is equal to tiles*24
+        goToSpot(desiredValue, 0.5); //CAN I CHANGE int inches IN goToSpot METHOD TO double?
       }
       else if (tiles < 0) {
-        desiredValue = java.lang.Math.abs(tiles)*tileDistance;
-        //add motion that moves the motors left until the dead wheel reaches the value of desiredValue
-
+        desiredValue *= tiles;
+        //has the robot move backward until it reaches the value of desiredValue which is equal to tiles*24
+        goToSpot(desiredValue, 0.5); //CAN I CHANGE int inches IN goToSpot METHOD TO double?
       }
     }
   }

@@ -19,8 +19,8 @@ public class Blue_Right_15 extends org.firstinspires.ftc.teamcode.Autonomous.Aut
 
         //positions and grabs cone
         moveElevator(1);
-        turn(-1);
-        move(x, 2);
+        move(y, 2);
+        pivot(1);
         moveElevator(0);
         closeGripper();
 
@@ -28,93 +28,87 @@ public class Blue_Right_15 extends org.firstinspires.ftc.teamcode.Autonomous.Aut
         if (parkingSlot == 3) {
             //scores cone on medium junction
             moveElevator(2);
-            move(y, 1.5);
-            pivot(-1);
+            move(x, -1.5);
+            pivot(0);
             openGripper();
 
             //picks up another cone
-            pivot(0);
+            pivot(1);
             moveElevator(0);
-            move(y, -1.5);
+            move(x, 1.5);
             moveElevator(1);
 
             //scores cone on low junction
-            move(y, 0.5);
-            pivot(-1);
-            openGripper();
+            move(x, -0.5);
             pivot(0);
+            openGripper();
 
             //parks in slot 3
-            move(y, -0.5);
-            move(x, -1);
+            move(x, 0.5);
+            move(y, -1.5);
         } else if (parkingSlot == 2) {
             //scores cone on low junction
             moveElevator(1);
-            move(y, 0.5);
-            pivot(-1);
+            move(x, -0.5);
+            pivot(0);
             openGripper();
 
             //picks up another cone
-            pivot(0);
+            pivot(1);
             moveElevator(0);
-            move(y, -0.5);
+            move(x, 0.5);
             moveElevator(2);
 
             //scores cone on medium junction
-            move(y, 1.5);
-            pivot(-1);
-            openGripper();
+            move(x, -1.5);
             pivot(0);
+            openGripper();
 
             //parks in slot 2
-            move(y, 0.5);
-            move(x, -1);
+            move(x, -0.5);
+            move(x, -1.5);
         } else if (parkingSlot == 1) {
             //scores cone on medium junction
             moveElevator(2);
-            move(y, 1.5);
-            pivot(-1);
+            move(x, -1.5);
+            pivot(0);
             openGripper();
 
             //picks up another cone
-            pivot(0);
+            pivot(1);
             moveElevator(0);
-            move(y, -1.5);
+            move(x, 1.5);
             moveElevator(1);
 
             //scores cone on low junction
-            move(y, 0.5);
-            pivot(-1);
-            openGripper();
+            move(x, -0.5);
             pivot(0);
+            openGripper();
 
             //parks in slot 1
-            move(y, 0.5);
-            move(x, -1);
+            move(x, -0.5);
+            move(y, -1.5);
         } else {
-            //backup in case camera doesn't identify cone color and parks in middle slot
-
-            //scores cone on medium junction
-            moveElevator(2);
-            move(y, 1.5);
-            pivot(-1);
+            //scores cone on low junction
+            moveElevator(1);
+            move(x, -0.5);
+            pivot(0);
             openGripper();
 
             //picks up another cone
-            pivot(0);
+            pivot(1);
             moveElevator(0);
-            move(y, -1.5);
-            moveElevator(1);
+            move(x, 0.5);
+            moveElevator(2);
 
-            //scores cone on low junction
-            move(y, 0.5);
-            pivot(-1);
-            openGripper();
+            //scores cone on medium junction
+            move(x, -1.5);
             pivot(0);
+            openGripper();
 
             //parks in slot 2
-            move(y, 0.5);
-            move(x, -1);
+            move(x, -0.5);
+            move(x, -1.5);
         }
     }
     */
