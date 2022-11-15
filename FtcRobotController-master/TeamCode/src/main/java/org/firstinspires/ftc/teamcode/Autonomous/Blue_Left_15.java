@@ -6,12 +6,10 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 public class Blue_Left_15 extends org.firstinspires.ftc.teamcode.Autonomous.Auto_Base_15 {
 
     public void runOpMode() throws InterruptedException {
-        /*
-        //POTENTIALLY ADD MORE MEDIUM/LOW JUNCTION SCORING IF EXTRA TIME
-
-        //add method below that takes signal cone color
+        lift.auto_lift_set(camera.zone());
 
 
+<<<<<<< HEAD
         //moves away from wall, scores on medium junction, and picks up new cone
         move(y, 1.6);
         moveElevator(2);
@@ -116,6 +114,8 @@ public class Blue_Left_15 extends org.firstinspires.ftc.teamcode.Autonomous.Auto
             move(x, 0.5);
             move(y, -1.5);
         }
+=======
+>>>>>>> dbb42fba312b194e5d4ba35be31036b3012c15f4
     }
-*/
+
 }

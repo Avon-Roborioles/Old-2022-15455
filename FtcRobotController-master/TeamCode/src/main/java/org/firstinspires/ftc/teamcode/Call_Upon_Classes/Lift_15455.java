@@ -12,10 +12,15 @@ public class Lift_15455 {
 
     private DcMotor lift = null;
 
-    private int max =-1*(5*716)+50;
+    private int max =(int)(5*716*2.5*1.25)+50;
     private int top =max-30;
     private int mid =(int) (2./3.*max)+200;
     private int low =(int) (1./3.*max)-200;
+
+
+    int hold = 1;
+    boolean up = false;
+    boolean down = false;
 
 
     public void init_lift (HardwareMap map, String name) {
@@ -44,6 +49,31 @@ public class Lift_15455 {
 //        lift.setPower(speed);
 //
 //
+        double upt = gp.left_trigger;
+        double downt = gp.right_trigger;
+        if (upt>0){
+            up = true;
+        }else{
+            up = false;
+        }
+        if (downt>0){
+            down = true;
+        }else{
+            down=false;
+        }
+        if (hold==1 && up){
+            hold=0;
+            lift.setTargetPosition(lift.getCurrentPosition()-400);
+        }
+        if (hold==1 && down){
+            hold=0;
+            lift.setTargetPosition(lift.getCurrentPosition()+400);
+        }
+        if (!up && !down){
+            hold=1;
+        }
+
+
 
 
         boolean a = gp.a;
@@ -61,7 +91,7 @@ public class Lift_15455 {
             lift.setTargetPosition(top);
         }
         if(a||b||x||y)
-            lift.setPower(.7);
+            lift.setPower(1);
         else if (lift.getCurrentPosition() >= 10 && lift. getCurrentPosition() <= 20)
             lift.setPower(0);
 
@@ -70,8 +100,29 @@ public class Lift_15455 {
 
     }
 
+    public void auto_lift_set(int zone) throws InterruptedException {
+        if (zone==0) {
+            lift.setTargetPosition(15);
+        } else if (zone==1) {
+            lift.setTargetPosition(low);
+        } else if (zone==2) {
+            lift.setTargetPosition(mid);
+        } else if (zone==3) {
+            lift.setTargetPosition(top);
+        }
+
+        while (lift.isBusy()){
+            Thread.sleep(100);
+        }
+
+    }
+
+
+
     public void get_telemetry (Telemetry telemetry) {
         telemetry.addData("Position",lift.getCurrentPosition());
+        telemetry.addData("up", up);
+        telemetry.addData("down", down);
     }
 
 /*

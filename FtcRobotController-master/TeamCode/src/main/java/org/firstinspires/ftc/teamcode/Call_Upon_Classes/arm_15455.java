@@ -15,13 +15,13 @@ public class arm_15455 {
     public void run_arm(Gamepad gp, Telemetry telemetry) {
         boolean left = gp.dpad_left;
         boolean right = gp.dpad_right;
-        boolean middle = gp.dpad_up;
+        boolean middle = gp.dpad_down;
 
 
         if (left) {
-            arm.setPosition(0.56); //need to check
-        } else if (right) {
             arm.setPosition(0.44); //need to check
+        } else if (right) {
+            arm.setPosition(0.56); //need to check
         }else if(middle) {
             arm.setPosition(.5);
         }
