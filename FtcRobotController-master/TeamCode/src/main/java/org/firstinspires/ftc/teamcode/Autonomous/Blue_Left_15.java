@@ -8,7 +8,7 @@ public class Blue_Left_15 extends org.firstinspires.ftc.teamcode.Autonomous.Auto
     public void runOpMode() throws InterruptedException {
         lift.auto_lift_set(camera.zone());
 
-
+/*
 <<<<<<< HEAD
         //moves away from wall, scores on medium junction, and picks up new cone
         move(y, 1.6);
@@ -117,5 +117,5 @@ public class Blue_Left_15 extends org.firstinspires.ftc.teamcode.Autonomous.Auto
 =======
 >>>>>>> dbb42fba312b194e5d4ba35be31036b3012c15f4
     }
-
-}
+*/
+}}

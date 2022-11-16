@@ -92,7 +92,7 @@ public class Lift_15455 {
         }
         if(a||b||x||y)
             lift.setPower(1);
-        else if (lift.getCurrentPosition() >= 10 && lift. getCurrentPosition() <= 20)
+        else if ((lift.getCurrentPosition() >= 10 && lift. getCurrentPosition() <= 20)||(lift.getCurrentPosition()>11750))
             lift.setPower(0);
 
         get_telemetry(telemetry);

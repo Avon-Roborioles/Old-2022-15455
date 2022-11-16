@@ -23,40 +23,23 @@ public class Intake_15455 {
     public void run_intake(Gamepad gp, Telemetry telemetry) {
         boolean open = gp.left_bumper;
         boolean close = gp.right_bumper;
-//ellery
         if (open) {
             intake.setPosition(.20); //need to check
         } else if (close) {
             intake.setPosition(0.33); //need to check
         }
 
-
-
-//        if (open) {
-//            intake.setPosition(.6); //need to check
-//        } else if (close) {
-//            intake.setPosition(0.30); //need to check
-//        }
         get_telemetry(telemetry);
-
-
     }
 
 
     public void get_telemetry (Telemetry telemetry) {
         telemetry.addData("Position",intake.getPosition());
     }
-/*
-    //opens the gripper
-    public void openGripper() {
-        //add servo value for closed gripper below
 
+    public void auto_intake(int open){
+        if (open==1) intake.setPosition(.20);
+        if (open==0) intake.setPosition(.33);
     }
 
-    //closes the gripper (ideally on a cone)
-    public void closeGripper() {
-        //add servo value for closed gripper below
-
-    }
-*/
 }
