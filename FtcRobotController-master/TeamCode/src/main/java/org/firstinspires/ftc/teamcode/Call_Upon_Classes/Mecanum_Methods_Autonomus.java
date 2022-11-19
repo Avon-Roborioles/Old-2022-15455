@@ -93,7 +93,7 @@ public class  Mecanum_Methods_Autonomus {
 
 
     public void goToSpot(double inches, double power){
-        inches*=91;
+        inches*=2925;
         setRelativeTargetAll((int) inches);
         setPowerAll(power);
 //        while (isBusy()){}
@@ -124,13 +124,13 @@ public class  Mecanum_Methods_Autonomus {
 
     public void strafeLeft(double power, double inches) {
         //107 ticks= 1 inch
-        inches*=107;
+        inches*=2925;
         setRelativeTargetIndividual((int)-inches,(int) inches,(int)inches,(int)-inches);
         setPowerIndividual(-power, power, -power, power);
         while (isBusy()){}
     }
     public void strafeRight(double power, double inches) {
-        inches*=107;
+        inches*=2925;
         setRelativeTargetIndividual((int)inches,(int)-inches,(int)-inches,(int)inches);
         setPowerIndividual(power, -power, power, -power);
         while (isBusy()){}
@@ -153,6 +153,23 @@ public class  Mecanum_Methods_Autonomus {
             return true;
         else
             return false;
+    }
+
+
+    public void go_to_park(int pos, double power) throws InterruptedException {
+        if (pos==1){
+            strafeLeft(power,24);
+            goToSpot(24,power);
+
+
+        }else if (pos==3){
+            strafeRight(power,24);
+            goToSpot(24,power);
+
+        }else{//pos 2 default
+            goToSpot(24,power);
+        }
+        while (isBusy()){Thread.sleep(100);}
     }
 
 

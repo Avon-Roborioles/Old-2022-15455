@@ -12,7 +12,7 @@ public class Lift_15455 {
 
     private DcMotor lift = null;
 
-    private int max =(int)(5*716*2.5*1.25)+50;
+    private int max =11750;
     private int top =max-30;
     private int mid =(int) (2./3.*max)+200;
     private int low =(int) (1./3.*max)-200;
@@ -92,7 +92,7 @@ public class Lift_15455 {
         }
         if(a||b||x||y)
             lift.setPower(1);
-        else if ((lift.getCurrentPosition() >= 10 && lift. getCurrentPosition() <= 20)||(lift.getCurrentPosition()>11750))
+        else if ((lift.getCurrentPosition() >= 10 && lift. getCurrentPosition() <= 20)||(lift.getCurrentPosition()>11900))
             lift.setPower(0);
 
         get_telemetry(telemetry);
