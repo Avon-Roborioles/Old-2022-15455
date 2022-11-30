@@ -13,7 +13,7 @@ public class Lift_15455 {
     private DcMotor lift = null;
 
     private int max =11750;
-    private int top =max;
+    private int top =max-30;
     private int mid =(int) (2./3.*max)+200;
     private int low =(int) (1./3.*max)-200;
 
@@ -82,7 +82,7 @@ public class Lift_15455 {
         boolean b = gp.b;
 
         if (a) {
-            lift.setTargetPosition(20);
+            lift.setTargetPosition(15);
         } else if (x) {
             lift.setTargetPosition(low);
         } else if (y) {
@@ -91,10 +91,7 @@ public class Lift_15455 {
             lift.setTargetPosition(top);
         }
         if(a||b||x||y)
-            if (lift.getCurrentPosition()>lift.getTargetPosition()&&lift.isBusy())
-                lift.setPower(.75);
-            else
-                lift.setPower(1);
+            lift.setPower(1);
         else if ((lift.getCurrentPosition() >= 10 && lift. getCurrentPosition() <= 20)||(lift.getCurrentPosition()>11900))
             lift.setPower(0);
 
@@ -113,12 +110,10 @@ public class Lift_15455 {
         } else if (zone==3) {
             lift.setTargetPosition(top);
         }
-        lift.setPower(1);
 
         while (lift.isBusy()){
             Thread.sleep(100);
         }
-        lift.setPower(0);
 
     }
 

@@ -1,5 +1,9 @@
 package org.firstinspires.ftc.teamcode.Call_Upon_Classes;
 
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.CRServo;
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -33,9 +37,9 @@ public class Intake_15455 {
         telemetry.addData("Position",intake.getPosition());
     }
 
-    public void auto_intake(boolean open){
-        if (open) intake.setPosition(.33);
-        if (!open) intake.setPosition(.2);
+    public void auto_intake(int open){
+        if (open==1) intake.setPosition(.20);
+        if (open==0) intake.setPosition(.33);
     }
 
 }

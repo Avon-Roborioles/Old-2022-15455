@@ -37,19 +37,11 @@ public class arm_15455 {
     }
 
     public void auto_arm(int value){
-<<<<<<< Updated upstream
         if (value == -1) {
             arm.setPosition(0.44); //need to check
         } else if (value == 1) {
             arm.setPosition(0.56); //need to check
         } else if (value == 0) {
-=======
-        if (value==-1) {
-            arm.setPosition(0.44); //need to check
-        } else if (value==1) {
-            arm.setPosition(0.56); //need to check
-        } else if (value==0) {
->>>>>>> Stashed changes
             arm.setPosition(.5);
         }
     }
