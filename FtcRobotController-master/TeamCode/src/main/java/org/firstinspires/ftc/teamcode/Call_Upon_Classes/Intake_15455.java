@@ -24,9 +24,9 @@ public class Intake_15455 {
         boolean open = gp.left_bumper;
         boolean close = gp.right_bumper;
         if (open) {
-            intake.setPosition(.20); //need to check
+            intake.setPosition(.33);
         } else if (close) {
-            intake.setPosition(0.33); //need to check
+            intake.setPosition(0.20);
         }
 
         get_telemetry(telemetry);
@@ -37,9 +37,9 @@ public class Intake_15455 {
         telemetry.addData("Position",intake.getPosition());
     }
 
-    public void auto_intake(int open){
-        if (open==1) intake.setPosition(.20);
-        if (open==0) intake.setPosition(.33);
+    public void auto_intake(boolean open){
+        if (open) intake.setPosition(.33);
+        if (open) intake.setPosition(.20);
     }
 
 }

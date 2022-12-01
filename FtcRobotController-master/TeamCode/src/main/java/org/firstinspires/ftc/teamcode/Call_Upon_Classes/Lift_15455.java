@@ -90,7 +90,7 @@ public class Lift_15455 {
         } else if (b) {
             lift.setTargetPosition(top);
         }
-        if(a||b||x||y)
+        if(a||b||x||y||up||down)
             lift.setPower(1);
         else if ((lift.getCurrentPosition() >= 10 && lift. getCurrentPosition() <= 20)||(lift.getCurrentPosition()>11900))
             lift.setPower(0);
