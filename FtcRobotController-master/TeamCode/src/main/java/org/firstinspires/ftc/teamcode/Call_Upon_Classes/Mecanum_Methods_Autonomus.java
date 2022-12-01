@@ -92,48 +92,48 @@ public class  Mecanum_Methods_Autonomus {
     }
 
 
-    public void goToSpot(double inches, double power){
+    public void goToSpot(double inches, double power)throws InterruptedException{
         inches*=307.9;
         setRelativeTargetAll((int) inches);
         setPowerAll(power);
-//        while (isBusy()){}
+        while (isBusy()){Thread.sleep(100);}
     }
 
     public void stopMotors() {setPowerAll(0);}
 
-    public void turn90left (double power){
+    public void turn90left (double power)throws InterruptedException{
         setRelativeTargetIndividual((int) Math.floor(-1440*1.2),(int) Math.floor(-1440*1.2),(int) Math.floor(1440*1.2), (int) Math.floor(1440*1.2));
         setPowerIndividual(-power,power,power,-power);
-        while (isBusy()){}
+        while (isBusy()){Thread.sleep(100);}
     }
-    public void turn90right (double power){
+    public void turn90right (double power)throws InterruptedException{
         setRelativeTargetIndividual((int) Math.floor(1440*1.2),(int) Math.floor(1440*1.2),(int) Math.floor(-1440*1.2), (int) Math.floor(-1440*1.2));
         setPowerIndividual(power,-power,-power,power);
-        while (isBusy()){}
+        while (isBusy()){Thread.sleep(100);}
     }
-    public void turn45left (double power){
+    public void turn45left (double power)throws InterruptedException{
         setRelativeTargetIndividual((int) Math.floor(-1440*1.2*.5),(int) Math.floor(-1440*1.2*.5),(int) Math.floor(1440*1.2*.5), (int) Math.floor(1440*1.2*.5));
         setPowerIndividual(-power,power,power,-power);
-        while (isBusy()){}
+        while (isBusy()){Thread.sleep(100);}
     }
-    public void turn45right (double power){
+    public void turn45right (double power)throws InterruptedException{
         setRelativeTargetIndividual((int) Math.floor(1440*1.2*.5),(int) Math.floor(1440*1.2*.5),(int) Math.floor(-1440*1.2*.5), (int) Math.floor(-1440*1.2*.5));
         setPowerIndividual(power,-power,-power,power);
-        while (isBusy()){}
+        while (isBusy()){Thread.sleep(100);}
     }
 
-    public void strafeLeft(double power, double inches) {
+    public void strafeLeft(double power, double inches) throws InterruptedException{
         //107 ticks= 1 inch
         inches*=307.9;
         setRelativeTargetIndividual((int)-inches,(int) inches,(int)inches,(int)-inches);
         setPowerIndividual(-power, power, -power, power);
-        while (isBusy()){}
+        while (isBusy()){Thread.sleep(100);}
     }
-    public void strafeRight(double power, double inches) {
+    public void strafeRight(double power, double inches) throws InterruptedException {
         inches*=307.9;
         setRelativeTargetIndividual((int)inches,(int)-inches,(int)-inches,(int)inches);
         setPowerIndividual(power, -power, power, -power);
-        while (isBusy()){}
+        while (isBusy()){Thread.sleep(100);}
     }
 
     // probably should re-write this one
@@ -169,7 +169,6 @@ public class  Mecanum_Methods_Autonomus {
         }else{//pos 2 default
             goToSpot(4.2,power);
         }
-        while (isBusy()){Thread.sleep(100);}
     }
 
 
