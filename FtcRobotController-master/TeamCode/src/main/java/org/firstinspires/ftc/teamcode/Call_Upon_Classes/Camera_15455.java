@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.Call_Upon_Classes;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -18,6 +19,7 @@ import org.openftc.easyopencv.OpenCvWebcam;
 import java.util.ArrayList;
 
 @TeleOp
+@Disabled
 public class Camera_15455 extends LinearOpMode{
     OpenCvCamera camera;
     AprilTagDetectionPipeline pipeline;

@@ -26,7 +26,7 @@ public class Intake_15455 {
         if (open) {
             intake.setPosition(.33);
         } else if (close) {
-            intake.setPosition(0.20);
+            intake.setPosition(0.22);
         }
 
         get_telemetry(telemetry);
@@ -39,7 +39,7 @@ public class Intake_15455 {
 
     public void auto_intake(boolean open){
         if (open) intake.setPosition(.33);
-        if (open) intake.setPosition(.20);
+        if (!open) intake.setPosition(.20);
     }
 
 }

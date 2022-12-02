@@ -99,6 +99,23 @@ public class Lift_15455 {
 
 
     }
+    public void run_lift_constant(Gamepad gp, Telemetry telemetry){
+        double ltrigger = gp.left_trigger;
+        double rtrigger = gp.right_trigger;
+
+        if (ltrigger > 0&&lift.getCurrentPosition()<max) {
+            speed = 1;
+        } else if (rtrigger > 0 && lift.getCurrentPosition()>20 ) {
+            speed = -1;
+        } else {
+            speed = 0;
+        }
+
+        lift.setPower(speed);
+
+
+    }
+
 
     public void auto_lift_set(int zone) throws InterruptedException {
         if (zone==0) {
