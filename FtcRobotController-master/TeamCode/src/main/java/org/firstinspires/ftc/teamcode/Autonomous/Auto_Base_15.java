@@ -29,6 +29,7 @@ public abstract class Auto_Base_15 extends LinearOpMode {
         imu_drive.init_drive_motors(hardwareMap, telemetry, false);
         camera.init_camera(hardwareMap, "camera",telemetry);
         arm.init_arm(hardwareMap, "arm");
+        lift.init_lift(hardwareMap,"lift");
     }
 
 

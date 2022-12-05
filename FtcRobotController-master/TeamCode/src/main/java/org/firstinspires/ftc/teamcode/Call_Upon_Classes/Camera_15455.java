@@ -95,7 +95,7 @@ public class Camera_15455 extends LinearOpMode{
 
                 if(tagFound)
                 {
-                    telemetry.addLine("Tag of interest is in sight!");
+                    telemetry.addData("Tag of interest is in sight! it is :: ", zone());
                 }
                 else
                 {

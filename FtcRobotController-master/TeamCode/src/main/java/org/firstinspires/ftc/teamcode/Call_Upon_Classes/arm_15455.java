@@ -50,6 +50,7 @@ public class arm_15455 {
             } else if (value == 0) {
                 arm.setPosition(.5);
             }
+
         }
     }
 }

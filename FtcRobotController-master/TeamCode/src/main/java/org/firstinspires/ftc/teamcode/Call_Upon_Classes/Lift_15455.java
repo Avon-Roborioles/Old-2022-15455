@@ -127,6 +127,7 @@ public class Lift_15455 {
         } else if (zone==3) {
             lift.setTargetPosition(top);
         }
+        lift.setPower(1);
 
         while (lift.isBusy()){
             Thread.sleep(100);
