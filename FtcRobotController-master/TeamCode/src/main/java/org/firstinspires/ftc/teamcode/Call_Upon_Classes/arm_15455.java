@@ -21,9 +21,9 @@ public class arm_15455 {
 
 
         if (left) {
-            arm.setPosition(0.44); //need to check
+            arm.setPosition(.18); //need to check
         } else if (right) {
-            arm.setPosition(0.56); //need to check
+            arm.setPosition(.82); //need to check
         } else if (middle) {
             arm.setPosition(.5);
         }
