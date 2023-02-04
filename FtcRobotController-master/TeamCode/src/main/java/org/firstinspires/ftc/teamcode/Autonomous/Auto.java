@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
+
 import java.util.concurrent.TransferQueue;
 
 
@@ -12,6 +13,7 @@ public class Auto extends org.firstinspires.ftc.teamcode.Autonomous.Auto_Base_15
     public void runOpMode() throws InterruptedException {
         init_classes(true);
         waitForStart();
+        camera.init_camera(hardwareMap, "camera",telemetry);
         lift.lift_fix();
         intake.auto_intake(false);
         Thread.sleep(1000);

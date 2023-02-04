@@ -15,6 +15,7 @@ public abstract class Auto_Base_15 extends LinearOpMode {
     protected org.firstinspires.ftc.teamcode.Call_Upon_Classes.Lift_15455 lift = new Lift_15455();
     protected org.firstinspires.ftc.teamcode.Call_Upon_Classes.Intake_15455 intake = new Intake_15455();
     protected org.firstinspires.ftc.teamcode.Call_Upon_Classes.Mecanum_IMU imu_drive = new Mecanum_IMU();
+
     protected org.firstinspires.ftc.teamcode.Call_Upon_Classes.Camera_15455 camera = new Camera_15455();
     protected org.firstinspires.ftc.teamcode.Call_Upon_Classes.arm_15455 arm = new arm_15455();
 //
@@ -27,7 +28,6 @@ public abstract class Auto_Base_15 extends LinearOpMode {
         lift.init_lift(hardwareMap, "lift");
         intake.init_intake(hardwareMap, "intake");
         imu_drive.init_drive_motors(hardwareMap, telemetry, false);
-        camera.init_camera(hardwareMap, "camera",telemetry);
         arm.init_arm(hardwareMap, "arm");
         lift.init_lift(hardwareMap,"lift");
     }
