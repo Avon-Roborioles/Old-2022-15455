@@ -27,7 +27,6 @@ public class arm_15455 {
         } else if (middle) {
             arm.setPosition(.5);
         }
-        get_telemetry(telemetry);
 
 
     }

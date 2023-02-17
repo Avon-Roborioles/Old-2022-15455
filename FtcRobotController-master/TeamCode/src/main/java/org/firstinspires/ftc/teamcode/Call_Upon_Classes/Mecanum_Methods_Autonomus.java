@@ -169,7 +169,7 @@ public class  Mecanum_Methods_Autonomus {
         }else{//pos 2 default
             goToSpot(4.2,power);
         }
-        goToSpot(1,.55);
+        goToSpot(1,power);
     }
 
 

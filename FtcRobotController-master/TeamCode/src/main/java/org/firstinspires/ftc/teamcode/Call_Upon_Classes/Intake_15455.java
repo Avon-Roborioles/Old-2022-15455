@@ -24,12 +24,11 @@ public class Intake_15455 {
         boolean open = gp.left_bumper;
         boolean close = gp.right_bumper;
         if (open) {
-            intake.setPosition(.28);
+            intake.setPosition(1);
         } else if (close) {
-            intake.setPosition(0.20);
+            intake.setPosition(0.63);
         }
 
-        get_telemetry(telemetry);
     }
 
 
@@ -38,8 +37,8 @@ public class Intake_15455 {
     }
 
     public void auto_intake(boolean open){
-        if (open) intake.setPosition(.33);
-        if (!open) intake.setPosition(.20);
+        if (open) intake.setPosition(1);
+        if (!open) intake.setPosition(.63);
     }
 
 }
