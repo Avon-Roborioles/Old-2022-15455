@@ -14,10 +14,10 @@ public class Lift_15455 {
 
     private DcMotor lift = null;
 
-    private int max =5720;
-    private int top =max-40;
-    private int mid =(int) (2./3.*max)+200;
-    private int low =(int) (1./3.*max)-200;
+    private int max =5720-150;
+    private int top =max-250;
+    private int mid =(int) (2./3.*max);
+    private int low =(int) (1./3.*max)+50;
 
 
     int hold = 1;
@@ -27,7 +27,6 @@ public class Lift_15455 {
 
     public void init_lift (HardwareMap map, String name) {
         lift  = map.get(DcMotor.class, name);
-//        lift.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         lift.setDirection(DcMotorSimple.Direction.REVERSE);
     }
 
@@ -36,13 +35,17 @@ public class Lift_15455 {
         lift.setTargetPosition(0);
         lift.setMode(DcMotor.RunMode.RUN_TO_POSITION);
     }
+    public void reset_lift_encoder(){
+        lift.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        lift.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+    }
     public void run_lift_constant(Gamepad gp, Telemetry telemetry){
         double ltrigger = gp.left_trigger;
         double rtrigger = gp.right_trigger;
 
-        if (ltrigger > 0 && lift.getCurrentPosition()<max) {
+        if (ltrigger > 0/* && lift.getCurrentPosition()<max*/) {
             speed = 1;
-        } else if (rtrigger > 0 && lift.getCurrentPosition()>40 ) {
+        } else if (rtrigger > 0/*&& lift.getCurrentPosition()>40 */) {
             speed = -1;
         } else {
             speed = 0.05;
@@ -55,7 +58,7 @@ public class Lift_15455 {
     }
 
 
-    public void auto_lift_set(int zone, Telemetry telemetry) throws InterruptedException {
+    public void auto_lift_set(int zone, Telemetry telemetry, double power) throws InterruptedException {
         lift.setDirection(DcMotorSimple.Direction.FORWARD);
         if (zone==0) {
             lift.setTargetPosition(5);
@@ -64,9 +67,9 @@ public class Lift_15455 {
         } else if (zone==2) {
             lift.setTargetPosition(-mid);
         } else if (zone==3) {
-            lift.setTargetPosition(-top);
+            lift.setTargetPosition(-top-100);
         }
-        lift.setPower(-1);
+        lift.setPower(-power);
 
         while (lift.isBusy()){
             get_telemetry(telemetry);

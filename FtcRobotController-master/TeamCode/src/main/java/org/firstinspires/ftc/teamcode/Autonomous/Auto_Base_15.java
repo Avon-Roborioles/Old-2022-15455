@@ -23,8 +23,8 @@ public abstract class Auto_Base_15 extends LinearOpMode {
 //    protected int scorePosition;
 
 
-    public void init_classes(boolean auto) {
-        if (!auto) auto_motors.init_auto_drive_motors(hardwareMap, telemetry);
+    public void init_classes(boolean RR) {
+        if (!RR) auto_motors.init_auto_drive_motors(hardwareMap, telemetry);
         lift.init_lift(hardwareMap, "lift");
         intake.init_intake(hardwareMap, "intake");
         arm.init_arm(hardwareMap, "arm");

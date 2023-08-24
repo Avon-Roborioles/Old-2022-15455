@@ -1,6 +1,5 @@
 package org.firstinspires.ftc.teamcode.Call_Upon_Classes;
 
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.*;
 
 
@@ -157,19 +156,20 @@ public class  Mecanum_Methods_Autonomus {
 
 
     public void go_to_park(int pos, double power) throws InterruptedException {
-        if (pos==1){
-            goToSpot(4.2,power);
-            strafeLeft(power,4.1);
+        if (pos == 1) {
+            strafeLeft(power, 4.6);//was 4.1
+            Thread.sleep(1000);
+            goToSpot(5.8, power);
 
 
-        }else if (pos==3){
-            goToSpot(4.2,power);
-            strafeRight(power,4);
+        } else if (pos == 3) {
+            strafeRight(power, 3.95);
+            Thread.sleep(1000);
+            goToSpot(6.05, power);
 
-        }else{//pos 2 default
-            goToSpot(4.2,power);
+        } else {//pos 2 default
+            goToSpot(5.9, power);
         }
-        goToSpot(1,power);
     }
 
 
@@ -179,6 +179,7 @@ public class  Mecanum_Methods_Autonomus {
         telemetry.addData("bl encoder value: ",bl.getCurrentPosition());
         telemetry.addData("br encoder value: ",br.getCurrentPosition());
     }
+
 
     /*
     //double that holds the value of inches that want to be traveled
